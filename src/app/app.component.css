@@ -6,16 +6,12 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
 p {
   line-height: 2rem;
 }
 
 .button-collapse {
+  /*color: #36D900;*/
   color: #26a69a;
 }
 
@@ -50,8 +46,4 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
 }

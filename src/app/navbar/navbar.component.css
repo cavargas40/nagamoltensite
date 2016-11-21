@@ -1,0 +1,22 @@
+nav ul a,
+nav .brand-logo {
+  /*color: #444;*/
+  color: #36D900;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #36D900;
+  /*color: #26a69a;*/
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+

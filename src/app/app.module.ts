@@ -6,18 +6,31 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
+import { NavbarComponent } from './navbar/navbar.component';
+
+import { AppRoutingModule } from './_config/app-routing.module';
+import { FooterComponent } from './footer/footer.component';
+import { WowtokenComponent } from './wowtoken/wowtoken.component';
+import { WowtokenService } from './wowtoken.service';
+import { WowrealmstatusComponent } from './wowrealmstatus/wowrealmstatus.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    WowtokenComponent,
+    WowrealmstatusComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterializeModule
+    MaterializeModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [WowtokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
