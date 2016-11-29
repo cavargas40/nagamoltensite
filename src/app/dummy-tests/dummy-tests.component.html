@@ -1,0 +1,27 @@
+<!-- Test 1! - NgIf -->
+<div>
+  <p>Expression status: {{showGreeting}}</p>
+  <button (click)="clicked()">Toggle Header</button>
+  <div style="border: 1px solid black; padding: 10px; width: 400px; margin-top: 10px;">
+
+    <div *ngIf="showGreeting">
+      <h2>Hello Angular2!</h2>
+    </div>
+  </div>
+</div>
+
+<!-- Test 2! - NgFor -->
+<div>
+  <p>Cars!</p>
+  <ul>
+    <li *ngFor="let car of cars; trackBy:myTrackBy; let i = index">
+      {{i}}:{{car}}
+    </li>
+  </ul>
+</div>
+
+<!-- Test 3! - Calling DOM -->
+<!-- One Element -->
+<!--<input type="text" />
+<div> Some other content </div>-->
+

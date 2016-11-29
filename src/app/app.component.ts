@@ -8,12 +8,8 @@ declare var jQuery: any;
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    constructor(private el:ElementRef) { }
-
+    constructor(private el: ElementRef) { }
     ngOnInit() {
         jQuery(this.el.nativeElement).find('.parallax').parallax();
     }
-
-
-
 }

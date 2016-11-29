@@ -13,7 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { WowtokenComponent } from './wowtoken/wowtoken.component';
 import { WowtokenService } from './wowtoken.service';
 import { WowrealmstatusComponent } from './wowrealmstatus/wowrealmstatus.component';
-
+import { DummyTestsComponent } from './dummy-tests/dummy-tests.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +21,15 @@ import { WowrealmstatusComponent } from './wowrealmstatus/wowrealmstatus.compone
     NavbarComponent,
     FooterComponent,
     WowtokenComponent,
-    WowrealmstatusComponent
+    WowrealmstatusComponent,
+    DummyTestsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    AppRoutingModule
+    AppRoutingModule    
   ],
   providers: [WowtokenService],
   bootstrap: [AppComponent]
