@@ -1,0 +1,31 @@
+/*
+    angular-cli
+*/
+ng new project-name
+ng new sassy-project --style=sass
+ng generate component component-name
+ng g class class-name
+ng g service service-name
+ng build
+ng build --prod --aot
+ng serve
+ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153
+ng test
+ng e2e
+ng github-pages:deploy --message "Optional commit message"
+
+
+/*
+    git
+*/
+git add .
+git commit -m "commmit message"
+git push
+git add origin http://github.com/mirepo.git
+git remote -v
+git pull origin master
+
+/*
+    
+*/
+
