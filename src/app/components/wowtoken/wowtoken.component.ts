@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WowtokenService } from '../wowtoken.service';
-import { Wowtoken } from '../wowtoken';
+import { WowtokenService } from '../../services/wowtoken.service';
+import { Wowtoken } from '../../model/wowtoken';
 
 @Component({
   selector: 'app-wowtoken',

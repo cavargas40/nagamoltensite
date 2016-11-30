@@ -4,16 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
 import { MaterializeModule } from 'angular2-materialize';
-import { NavbarComponent } from './navbar/navbar.component';
 
-import { AppRoutingModule } from './_config/app-routing.module';
-import { FooterComponent } from './footer/footer.component';
-import { WowtokenComponent } from './wowtoken/wowtoken.component';
-import { WowtokenService } from './wowtoken.service';
-import { WowrealmstatusComponent } from './wowrealmstatus/wowrealmstatus.component';
-import { DummyTestsComponent } from './dummy-tests/dummy-tests.component';
+//routing
+import { AppRoutingModule } from './util/app-routing.module';
+
+//app components
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WowtokenComponent } from './components/wowtoken/wowtoken.component';
+import { WowrealmstatusComponent } from './components/wowrealmstatus/wowrealmstatus.component';
+import { DummyTestsComponent } from './components/dummy-tests/dummy-tests.component';
+import { GuildMembersComponent } from './components/guild-members/guild-members.component';
+
+//services
+import { WowtokenService } from './services/wowtoken.service';
+import { WowrealmstatusService } from './services/wowrealmstatus.service';
+import { GuildMembersService } from './services/guild-members.service';
+
+//errorhandlers
+import { AppError } from './util/app-error';
+import { IndexComponent } from './components/pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +33,18 @@ import { DummyTestsComponent } from './dummy-tests/dummy-tests.component';
     FooterComponent,
     WowtokenComponent,
     WowrealmstatusComponent,
-    DummyTestsComponent
+    DummyTestsComponent,
+    GuildMembersComponent,    
+    IndexComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    AppRoutingModule    
+    AppRoutingModule   
   ],
-  providers: [WowtokenService],
+  providers: [WowtokenService, WowrealmstatusService, AppError],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
