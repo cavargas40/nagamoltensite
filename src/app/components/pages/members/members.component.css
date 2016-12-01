@@ -47,3 +47,7 @@ p {
 .icon-block .material-icons {
   font-size: inherit;
 }
+
+.cursorpointer{
+  cursor:pointer;
+}

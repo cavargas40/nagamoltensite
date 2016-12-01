@@ -28,7 +28,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let guildmember of guildmembers">
+      <tr *ngFor="let guildmember of guildmembers" (click)="abretesesamo(guildmember)" class="cursorpointer">
         <td>
           <div *ngIf="guildmember.character.level > 20">
             <img src="http://render-us.worldofwarcraft.com/character/{{guildmember.character.thumbnail}}" alt="">
