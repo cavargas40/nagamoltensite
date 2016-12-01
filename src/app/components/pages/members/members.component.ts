@@ -2,8 +2,6 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { GuildMembersService } from '../../../services/guild-members.service';
 import { Member, Character, Spec } from '../../../model/member';
 
-import { FilterLvlMembersPipe } from '../../../util/pipes/filter-lvl-members.pipe';
-
 declare var jQuery: any;
 
 @Component({

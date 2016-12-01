@@ -23,7 +23,7 @@
         <th data-field="img">Foto</th>
         <th data-field="name">Nombre</th>
         <th data-field="rol">Especialización</th>
-        <th data-field="race">Función</th>
+        <th data-field="race" class="hide-on-small-only">Función</th>
       </tr>
     </thead>
 
@@ -53,7 +53,7 @@
             -
           </div>
         </td>
-        <td>
+        <td class="hide-on-small-only">
           <div *ngIf="guildmember?.character?.spec">
             <img src="assets/_{{guildmember?.character?.spec?.role}}.jpg" alt="">
           </div>
