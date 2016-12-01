@@ -3,8 +3,9 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { GuildMember } from '../model/guild-member';
+import { Member } from '../model/member';
 import { AppError } from '../util/app-error';
+
 
 @Injectable()
 export class GuildMembersService {
@@ -13,15 +14,20 @@ export class GuildMembersService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   //thumbnail viewer -> http://render-api-us.worldofwarcraft.com/static-render/us/ragnaros/101/80604005-avatar.jpg
+  //spec icon -> http://media.blizzard.com/wow/icons/36/spell_holy_guardianspirit.jpg
 
   constructor(private http: Http, private ups : AppError) { }
 
-  getRealmStatus(): Promise<GuildMember> {
+  getGuildMembers(): Promise<Member[]> {
     return this.http
       .get(this.wowapiurl)
       .toPromise()
-      .then((res) => res.json().realms[0])
+      .then((res) => res.json().members as Member[])
       .catch(this.ups.handleError);
+  }
+
+  getTopGuildMembers(lvl: number):Promise<Member[]>{
+    return this.getGuildMembers().then(members => members.find(member=>member.character.level === Number(lvl)));
   }
 
 }
