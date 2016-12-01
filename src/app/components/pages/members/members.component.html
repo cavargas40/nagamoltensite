@@ -14,7 +14,7 @@
     Integrantes
   </h2>
   <p>
-    Estos son algunos de los miembros de la guild NagaMolten!
+    Estos son los miembros de la guild NagaMolten!
   </p>
 
   <table class="table-responsive highlight">
@@ -22,46 +22,49 @@
       <tr>
         <th data-field="img">Foto</th>
         <th data-field="name">Nombre</th>
-        <th data-field="rol">Rol</th>
-        <th data-field="race">Rol Desc</th>
+        <th data-field="rol">Especialización</th>
+        <th data-field="race">Función</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let guildmember of guildmembers">
         <td>
-          <img src="http://render-api-us.worldofwarcraft.com/static-render/us/{{guildmember.character.thumbnail}}" alt="">
+          <div *ngIf="guildmember.character.level > 20">
+            <img src="http://render-us.worldofwarcraft.com/character/{{guildmember.character.thumbnail}}" alt="">
+          </div>
+          <div *ngIf="guildmember.character.level < 20">
+            <img src="http://us.battle.net/wow/static/images/2d/avatar/10-0.jpg" alt="">
+          </div>
         </td>
-        <td>{{guildmember.character.name}}</td>
         <td>
-          <img src="http://media.blizzard.com/wow/icons/36/{{guildmember.character.spec.icon}}.jpg" alt="">
+          <h5>
+            {{guildmember.character.name}}
+          </h5>
         </td>
-        <td>{{guildmember.character.spec.role}}</td>
+        <td>
+          <div *ngIf="guildmember?.character?.spec">
+            <p>
+              <img src="http://media.blizzard.com/wow/icons/36/{{guildmember.character?.spec?.icon}}.jpg" alt=""> {{guildmember.character?.spec?.name}}
+            </p>
+          </div>
+
+          <div *ngIf="!guildmember?.character?.spec">
+            -
+          </div>
+        </td>
+        <td>
+          <div *ngIf="guildmember?.character?.spec">
+            <img src="assets/_{{guildmember?.character?.spec?.role}}.jpg" alt="">
+          </div>
+          <div *ngIf="!guildmember?.character?.spec">
+            -
+          </div>
+          <div>
+
+          </div>
+        </td>
       </tr>
-
-
-
-
-
-
-      <!--<tr>
-        <td>Foto</td>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Foto</td>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Foto</td>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-      </tr>-->
     </tbody>
   </table>
 </div>

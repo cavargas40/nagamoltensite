@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { WowtokenComponent } from './components/wowtoken/wowtoken.component';
 import { WowrealmstatusComponent } from './components/wowrealmstatus/wowrealmstatus.component';
 import { DummyTestsComponent } from './components/dummy-tests/dummy-tests.component';
+import { IndexComponent } from './components/pages/index/index.component';
+import { MembersComponent } from './components/pages/members/members.component';
 
 //services
 import { WowtokenService } from './services/wowtoken.service';
@@ -23,8 +25,9 @@ import { GuildMembersService } from './services/guild-members.service';
 
 //errorhandlers
 import { AppError } from './util/app-error';
-import { IndexComponent } from './components/pages/index/index.component';
-import { MembersComponent } from './components/pages/members/members.component';
+
+//pipes
+//import { FilterLvlMembersPipe } from './util/pipes/filter-lvl-members.pipe';
 
 @NgModule({
   declarations: [
@@ -33,16 +36,16 @@ import { MembersComponent } from './components/pages/members/members.component';
     FooterComponent,
     WowtokenComponent,
     WowrealmstatusComponent,
-    DummyTestsComponent,        
-    IndexComponent, 
-    MembersComponent    
+    DummyTestsComponent,
+    IndexComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    AppRoutingModule   
+    AppRoutingModule
   ],
   providers: [WowtokenService, WowrealmstatusService, AppError, GuildMembersService],
   bootstrap: [AppComponent]

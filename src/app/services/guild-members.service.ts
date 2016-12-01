@@ -16,7 +16,7 @@ export class GuildMembersService {
   //thumbnail viewer -> http://render-api-us.worldofwarcraft.com/static-render/us/ragnaros/101/80604005-avatar.jpg
   //spec icon -> http://media.blizzard.com/wow/icons/36/spell_holy_guardianspirit.jpg
 
-  constructor(private http: Http, private ups : AppError) { }
+  constructor(private http: Http, private ups: AppError) { }
 
   getGuildMembers(): Promise<Member[]> {
     return this.http
@@ -26,8 +26,7 @@ export class GuildMembersService {
       .catch(this.ups.handleError);
   }
 
-  getTopGuildMembers(lvl: number):Promise<Member[]>{
-    return this.getGuildMembers().then(members => members.find(member=>member.character.level === Number(lvl)));
-  }
-
+  // getTopGuildMembers(lvl: number): Promise<Member[]> {
+  //   return this.getGuildMembers().then((members) => members.find(member => member.character.level === Number(lvl)));
+  // }
 }
