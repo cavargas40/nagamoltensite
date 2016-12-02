@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { MaterializeModule } from 'angular2-materialize';
 
 //routing
 import { AppRoutingModule } from './util/app-routing.module';
@@ -17,6 +17,7 @@ import { WowrealmstatusComponent } from './components/wowrealmstatus/wowrealmsta
 import { DummyTestsComponent } from './components/dummy-tests/dummy-tests.component';
 import { IndexComponent } from './components/pages/index/index.component';
 import { MembersComponent } from './components/pages/members/members.component';
+import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 
 //services
 import { WowtokenService } from './services/wowtoken.service';
@@ -29,6 +30,9 @@ import { AppError } from './util/app-error';
 //pipes
 //import { FilterLvlMembersPipe } from './util/pipes/filter-lvl-members.pipe';
 
+//external librarys
+import { MaterializeModule } from 'angular2-materialize';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,8 @@ import { AppError } from './util/app-error';
     WowrealmstatusComponent,
     DummyTestsComponent,
     IndexComponent,
-    MembersComponent
+    MembersComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,13 @@ import { AppError } from './util/app-error';
     MaterializeModule,
     AppRoutingModule
   ],
-  providers: [WowtokenService, WowrealmstatusService, AppError, GuildMembersService],
+  providers: [
+    WowtokenService,
+    WowrealmstatusService,
+    AppError,
+    GuildMembersService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

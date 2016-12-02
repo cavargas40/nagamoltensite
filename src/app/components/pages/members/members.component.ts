@@ -29,7 +29,8 @@ export class MembersComponent implements OnInit {
     let link = "";
     if(member.character.level>100)
     {
-      link = "http://www.wow-heroes.com/character/us/Ragnaros/" + member.character.name + "/"
+      //link = "http://www.wow-heroes.com/character/us/Ragnaros/" + member.character.name + "/" //wow heroes
+      link = "http://us.battle.net/wow/es/character/ragnaros/"+member.character.name+"/simple"  //wow armory
       window.open(link);
     }
     else
