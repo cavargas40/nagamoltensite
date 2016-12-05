@@ -1,3 +1,20 @@
-#fixed-footer .by .button{
-    display: none !important;
+#my_typeform {
+
+display: inline-block;
+
+width: 800px;
+
+height: 600px;
+
+margin: 0px;
+
+}
+
+iframe{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:10%;
+    border:0;
 }
