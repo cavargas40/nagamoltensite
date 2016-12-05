@@ -32,6 +32,7 @@ import { AppError } from './util/app-error';
 
 //external librarys
 import { MaterializeModule } from 'angular2-materialize';
+import { RecruitmentComponent } from './components/pages/recruitment/recruitment.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MaterializeModule } from 'angular2-materialize';
     DummyTestsComponent,
     IndexComponent,
     MembersComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    RecruitmentComponent
   ],
   imports: [
     BrowserModule,

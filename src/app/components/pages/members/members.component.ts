@@ -37,8 +37,5 @@ export class MembersComponent implements OnInit {
     {
       window.alert("Debe ser minimo nivel 100");
     }
-    
-    
   }
-
 }

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from '../components/pages/index/index.component';
 import { MembersComponent } from '../components/pages/members/members.component';
 import { ScheduleComponent } from '../components/pages/schedule/schedule.component';
+import { RecruitmentComponent } from '../components/pages/recruitment/recruitment.component';
 
 //tests
 import { DummyTestsComponent } from '../components/dummy-tests/dummy-tests.component'
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: '',  component: IndexComponent  },  
   { path: 'members', component: MembersComponent},
   { path: 'calendar', component: ScheduleComponent},
+  { path: 'recruitment', component: RecruitmentComponent},
   { path: 'dummy', component: DummyTestsComponent}
   //   { path: 'detail/:id', component: HeroDetailComponent },
   //   { path: 'heroes',     component: HeroesComponent }
