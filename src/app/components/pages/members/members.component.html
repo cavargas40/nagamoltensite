@@ -28,6 +28,7 @@
     </thead>
 
     <tbody>
+      <!--<tr *ngFor="let guildmember of guildmembers | paginate: { itemsPerPage:10, currentPage: p}" (click)="abretesesamo(guildmember)" class="cursorpointer">-->
       <tr *ngFor="let guildmember of guildmembers" (click)="abretesesamo(guildmember)" class="cursorpointer">
         <td>
           <div *ngIf="guildmember.character.level > 20">
@@ -67,4 +68,16 @@
       </tr>
     </tbody>
   </table>
+  <div class="row">
+    <!-- CHANGED THE DIV BELOW (Changed size to col s10 offset-s1 
+    to match the divs above and added center-align -->
+    <div class="col s10 offset-s1 center-align" *ngIf="loadall">
+      <button class="btn waves-effect waves-light colorNagaMolten" name="action" (click)="loadMore()">
+            Cargar mas...            
+        </button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
 </div>

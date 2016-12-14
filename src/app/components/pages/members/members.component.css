@@ -6,6 +6,14 @@
  * Made By MaterializeCSS.com
  */
 
+ 
+.colorNagaMolten
+{
+    /*color: #36D900;*/
+    background-color: #36D900 !important;
+    color: #FFF;
+}
+
 p {
   line-height: 2rem;
 }

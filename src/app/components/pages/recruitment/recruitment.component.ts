@@ -12,6 +12,7 @@ export class RecruitmentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   // onLoad() {

@@ -1,0 +1,51 @@
+<div class="parallax-container valign-wrapper">
+  <div class="section">
+    <div class="container">
+      <div class="row center">
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="assets/background-login.jpg" alt="World of Warcraft! Legion"></div>
+</div>
+<br>
+<br>
+<form id="form_login">
+  <div class="container">
+    <div class="container center-align">
+      <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+        <h5>Por favor, ingrese en su cuenta</h5>
+        <p>Si aun no tiene una cuenta, <a routerLink="/createaccount">cree la suya</a> </p>
+
+        <form class="col s12" method="post">
+
+          <div class='row'>
+            <div class='col s12'>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <input type='text' name='txt_username' id='txt_username' />
+              <label for='txt_username'>Usuario</label>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <input type='password' name='txt_password' id='txt_password' />
+              <label for='txt_password'>Contraseña</label>
+            </div>
+            <label style='float: right;'>
+								<a class='red-text' routerLink="/forgotpassword"><b>Olvido la contraseña?</b></a>
+							</label>
+          </div>
+
+          <div class='row'>
+            <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect colorbackNagaMolten disabled'>Iniciar Sesion</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>

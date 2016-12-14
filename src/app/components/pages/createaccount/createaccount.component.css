@@ -1,0 +1,96 @@
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  /*color: #36D900;*/
+  color: #26a69a;
+}
+
+.parallax-container {
+    min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.colorbackNagaMolten
+{
+    background-color: #36D900;
+}
+
+
+
+
+
+
+ /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #36D900;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid  #36D900;
+     box-shadow: 0 1px 0 0 #36D900;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+    /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: #36D900;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid  #36D900;
+     box-shadow: 0 1px 0 0 #36D900;
+   }
+
+
+    /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #36D900;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid  #36D900;
+     box-shadow: 0 1px 0 0 #36D900;
+   }
+
+
+   

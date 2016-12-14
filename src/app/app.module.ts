@@ -6,8 +6,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
-//routing
+//modules
 import { AppRoutingModule } from './util/app-routing.module';
+//import { Ng2PaginationModule } from 'ng2-pagination';
 
 //app components
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -33,6 +34,9 @@ import { AppError } from './util/app-error';
 //external librarys
 import { MaterializeModule } from 'angular2-materialize';
 import { RecruitmentComponent } from './components/pages/recruitment/recruitment.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { CreateaccountComponent } from './components/pages/createaccount/createaccount.component';
+import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +49,17 @@ import { RecruitmentComponent } from './components/pages/recruitment/recruitment
     IndexComponent,
     MembersComponent,
     ScheduleComponent,
-    RecruitmentComponent
+    RecruitmentComponent,
+    LoginComponent,
+    CreateaccountComponent,
+    ForgotpasswordComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
+    //Ng2PaginationModule,
     AppRoutingModule
   ],
   providers: [
