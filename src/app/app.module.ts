@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+//import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
@@ -30,7 +30,7 @@ import { AppError } from './util/app-error';
 
 //pipes
 //import { FilterLvlMembersPipe } from './util/pipes/filter-lvl-members.pipe';
-
+import { SafePipe } from './util/pipes/safe.pipe'
 //external librarys
 import { MaterializeModule } from 'angular2-materialize';
 import { RecruitmentComponent } from './components/pages/recruitment/recruitment.component';
@@ -52,7 +52,8 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
     RecruitmentComponent,
     LoginComponent,
     CreateaccountComponent,
-    ForgotpasswordComponent    
+    ForgotpasswordComponent,
+    SafePipe    
   ],
   imports: [
     BrowserModule,
@@ -66,9 +67,9 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
     WowtokenService,
     WowrealmstatusService,
     AppError,
-    GuildMembersService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
-  ],
+    GuildMembersService
+    //,    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
