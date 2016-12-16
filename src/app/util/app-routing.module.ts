@@ -8,26 +8,24 @@ import { RecruitmentComponent } from '../components/pages/recruitment/recruitmen
 import { LoginComponent } from '../components/pages/login/login.component';
 import { CreateaccountComponent } from '../components/pages/createaccount/createaccount.component';
 import { ForgotpasswordComponent } from '../components/pages/forgotpassword/forgotpassword.component';
+import { NotfoundComponent } from '../components/pages/notfound/notfound.component'
 
 //tests
 import { DummyTestsComponent } from '../components/dummy-tests/dummy-tests.component'
 
 const routes: Routes = [
   //{ path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: '',  component: IndexComponent  },  
-  { path: 'members', component: MembersComponent},
-  { path: 'calendar', component: ScheduleComponent},
-  { path: 'recruitment', component: RecruitmentComponent},
-  { path: 'dummy', component: DummyTestsComponent},
+  { path: '', component: IndexComponent },
+  { path: 'members', component: MembersComponent },
+  { path: 'calendar', component: ScheduleComponent },
+  { path: 'recruitment', component: RecruitmentComponent },
+  { path: 'dummy', component: DummyTestsComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'createaccount',  component: CreateaccountComponent},
-  { path: 'forgotpassword', component: ForgotpasswordComponent }
-
-  //   { path: 'detail/:id', component: HeroDetailComponent },
-  //   { path: 'heroes',     component: HeroesComponent }
-  //{path: '/404', name: 'NotFound', component: NotFoundComponent},
-  //{path: '/*path', redirectTo: ['NotFound']}
-  //{path: '/**', redirectTo: ['NotFound']}
+  { path: 'createaccount', component: CreateaccountComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'notfound', component: NotfoundComponent },
+  { path: '*path', redirectTo: '/notfound' },
+  { path: '**', redirectTo: '/notfound' }
 ];
 
 @NgModule({

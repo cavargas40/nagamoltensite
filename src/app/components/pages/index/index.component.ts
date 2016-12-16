@@ -33,13 +33,4 @@ export class IndexComponent implements OnInit {
     this.current_url = "https://www.youtube.com/embed/" + boss.url_video + "?rel=0";
     //this.current_url = this.domSanitizer.bypassSecurityTrustUrl("//www.youtube.com/embed/" + boss.url_video + "?rel=0");
   }
-
-  // sanitize(url:string){
-  //   return this.domSanitizer.bypassSecurityTrustUrl(url);
-  // }
-
-
-
-
-
 }

@@ -37,6 +37,7 @@ import { RecruitmentComponent } from './components/pages/recruitment/recruitment
 import { LoginComponent } from './components/pages/login/login.component';
 import { CreateaccountComponent } from './components/pages/createaccount/createaccount.component';
 import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
+import { NotfoundComponent } from './components/pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
     LoginComponent,
     CreateaccountComponent,
     ForgotpasswordComponent,
-    SafePipe    
+    SafePipe,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
