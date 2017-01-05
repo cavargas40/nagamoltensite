@@ -21,9 +21,12 @@ import { MembersComponent } from './components/pages/members/members.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 
 //services
-import { WowtokenService } from './services/wowtoken.service';
-import { WowrealmstatusService } from './services/wowrealmstatus.service';
-import { GuildMembersService } from './services/guild-members.service';
+// import { WowtokenService } from './services/wowtoken.service';
+// import { WowrealmstatusService } from './services/wowrealmstatus.service';
+// import { GuildMembersService } from './services/guild-members.service';
+// import { AlertService } from './services/alert.service';
+// import { AuthenticationService } from './services/authentication.service';
+import {  /* UserService, */  WowtokenService, WowrealmstatusService, GuildMembersService /*, AlertService, AuthenticationService*/ } from './services';
 
 //errorhandlers
 import { AppError } from './util/app-error';
@@ -31,6 +34,7 @@ import { AppError } from './util/app-error';
 //pipes
 //import { FilterLvlMembersPipe } from './util/pipes/filter-lvl-members.pipe';
 import { SafePipe } from './util/pipes/safe.pipe'
+
 //external librarys
 import { MaterializeModule } from 'angular2-materialize';
 import { RecruitmentComponent } from './components/pages/recruitment/recruitment.component';
@@ -38,6 +42,17 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { CreateaccountComponent } from './components/pages/createaccount/createaccount.component';
 import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
 import { NotfoundComponent } from './components/pages/notfound/notfound.component';
+import { AccountComponent } from './components/pages/account/account.component';
+import { HomeComponent } from './components/pages/account/home/home.component';
+//import { AlertComponent } from './directives/';
+
+//guards
+//import { AuthGuard } from './guards/';
+
+//fackebackend
+// import { fakeBackendProvider } from './util';
+// import { MockBackend, MockConnection } from '@angular/http/testing';
+// import { BaseRequestOptions } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -55,7 +70,10 @@ import { NotfoundComponent } from './components/pages/notfound/notfound.componen
     CreateaccountComponent,
     ForgotpasswordComponent,
     SafePipe,
-    NotfoundComponent
+    NotfoundComponent,
+    AccountComponent,
+    HomeComponent
+    //,AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +87,11 @@ import { NotfoundComponent } from './components/pages/notfound/notfound.componen
     WowtokenService,
     WowrealmstatusService,
     AppError,
-    GuildMembersService
+    GuildMembersService,
+    // AlertService,
+    // AuthenticationService,
+    // AuthGuard,
+    // UserService
     //,    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],  
   bootstrap: [AppComponent]

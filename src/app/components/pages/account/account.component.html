@@ -1,0 +1,11 @@
+<div>
+  <h1>Hi {{currentUser.firstName}}</h1>
+  <p>Usted se logueo correctamente en angular 2! :)</p>
+  <h4>Los usuario registrados!</h4>
+  <ul>
+    <li *ngFor="let user of users">
+      {{user.username}} ({{user.firstName}} {{user.lastName}})
+      - <a (click)="deleteUser(user.id)">Delete</a>
+    </li>
+  </ul>
+</div>

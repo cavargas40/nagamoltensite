@@ -8,6 +8,7 @@ ng g class class-name
 ng g service service-name
 ng build
 ng build --prod --aot
+ng build --prod --aot --no-sourcemap
 ng serve
 ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153
 ng test
