@@ -20,6 +20,10 @@ export class IndexComponent implements OnInit {
   { boss_name: 'Cenarius', boss_image: 'ui-ej-boss-cenarius', url_video: '1C4ijqIgytk' },
   { boss_name: 'Xavius', boss_image: 'ui-ej-boss-xavius', url_video: 'qpwb60z6bvw' }];
 
+  trialofvalorbosses: Raidguide[] = [{ boss_name: 'Odyn', boss_image: 'ui-ej-boss-odyn', url_video: 'ZS78mRperec' },
+  { boss_name: 'Guarm', boss_image: 'ui-ej-boss-guarm', url_video: 'qnD_b4yTR2Q' },
+  { boss_name: 'Helya', boss_image: 'ui-ej-boss-helya', url_video: 'zm3pcdk8H_A' }];
+
   current_url: string = 'https://www.youtube.com/embed/n9dk_aOgWzE?rel=0';
 
   constructor(private el: ElementRef) { }
