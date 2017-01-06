@@ -26,17 +26,17 @@ export class CreateaccountComponent implements OnInit {
 
   register() {
     this.loading = true;
-    this.userService.create(this.model)
-      .subscribe(
-      data => {
-          //muestra un mensaje de que se creo correctamente y mantiene el mensaje despues de redireccionar a la pagina del login
-          this.alertService.success('Se registro correctamente', true);
-          this.router.navigate(['/login']);
-      },
-      error => {
-          this.alertService.error(error);
-          this.loading=false;          
-      });
+    // this.userService.create(this.model)
+    //   .subscribe(
+    //   data => {
+    //       //muestra un mensaje de que se creo correctamente y mantiene el mensaje despues de redireccionar a la pagina del login
+    //       this.alertService.success('Se registro correctamente', true);
+    //       this.router.navigate(['/login']);
+    //   },
+    //   error => {
+    //       this.alertService.error(error);
+    //       this.loading=false;          
+    //   });
   }
 
 }
