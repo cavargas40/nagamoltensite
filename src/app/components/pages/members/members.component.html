@@ -32,10 +32,10 @@
       <tr *ngFor="let guildmember of guildmembers" (click)="abretesesamo(guildmember)" class="cursorpointer">
         <td>
           <div *ngIf="guildmember.character.level > 20">
-            <img src="http://render-us.worldofwarcraft.com/character/{{guildmember.character.thumbnail}}" alt="">
+            <img class="circle" src="http://render-us.worldofwarcraft.com/character/{{guildmember.character.thumbnail}}" alt="">
           </div>
-          <div *ngIf="guildmember.character.level < 20">
-            <img src="http://us.battle.net/wow/static/images/2d/avatar/10-0.jpg" alt="">
+          <div *ngIf="guildmember.character.level <= 20">
+            <img class="circle" src="http://us.battle.net/wow/static/images/2d/avatar/10-0.jpg" alt="">
           </div>
         </td>
         <td>
@@ -46,7 +46,7 @@
         <td>
           <div *ngIf="guildmember?.character?.spec">
             <p>
-              <img src="http://media.blizzard.com/wow/icons/36/{{guildmember.character?.spec?.icon}}.jpg" alt=""> {{guildmember.character?.spec?.name}}
+              <img class="circle" src="http://media.blizzard.com/wow/icons/36/{{guildmember.character?.spec?.icon}}.jpg" alt=""> {{guildmember.character?.spec?.name}}
             </p>
           </div>
 
