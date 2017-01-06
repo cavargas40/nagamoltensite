@@ -10,9 +10,11 @@ import { CreateaccountComponent } from '../components/pages/createaccount/create
 import { ForgotpasswordComponent } from '../components/pages/forgotpassword/forgotpassword.component';
 import { NotfoundComponent } from '../components/pages/notfound/notfound.component';
 import { AccountComponent } from '../components/pages/account/account.component';
+import { ProfileComponent } from '../components/pages/account/profile/profile.component';
 
 //authentication guard
 //import { AuthGuard } from '../guards/';
+import { Auth0Guard } from '../guards/';
 
 //tests
 import { DummyTestsComponent } from '../components/dummy-tests/dummy-tests.component'
@@ -29,6 +31,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'createaccount', component: CreateaccountComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [Auth0Guard] },
   //{ path: 'account', component:  AccountComponent, canActivate: [AuthGuard]},
   { path: 'notfound', component: NotfoundComponent },
   { path: '*path', redirectTo: '/notfound' },

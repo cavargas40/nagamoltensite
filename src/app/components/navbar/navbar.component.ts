@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Auth } from '../../services/';
 
 declare var jQuery: any;
 
@@ -10,9 +11,13 @@ declare var jQuery: any;
 
 export class NavbarComponent implements OnInit {
 
-  constructor(private el:ElementRef) { }
+  profile: any;
+
+  constructor(private el: ElementRef, private auth: Auth) {
+  }
 
   ngOnInit() {
     jQuery(this.el.nativeElement).find('.button-collapse').sideNav();
+    //jQuery(this.el.nativeElement).find('.dropdown-button').dropdown();
   }
 }

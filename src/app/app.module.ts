@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 //import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,7 @@ import { ScheduleComponent } from './components/pages/schedule/schedule.componen
 // import { GuildMembersService } from './services/guild-members.service';
 // import { AlertService } from './services/alert.service';
 // import { AuthenticationService } from './services/authentication.service';
-import {  /* UserService, */  WowtokenService, WowrealmstatusService, GuildMembersService /*, AlertService, AuthenticationService*/ } from './services';
+import {  /* UserService, */  WowtokenService, WowrealmstatusService, GuildMembersService /*, AlertService, AuthenticationService*/, Auth } from './services';
 
 //errorhandlers
 import { AppError } from './util/app-error';
@@ -44,10 +45,12 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
 import { NotfoundComponent } from './components/pages/notfound/notfound.component';
 import { AccountComponent } from './components/pages/account/account.component';
 import { HomeComponent } from './components/pages/account/home/home.component';
+import { ProfileComponent } from './components/pages/account/profile/profile.component';
 //import { AlertComponent } from './directives/';
 
 //guards
 //import { AuthGuard } from './guards/';
+import { Auth0Guard } from './guards/';
 
 //fackebackend
 // import { fakeBackendProvider } from './util';
@@ -72,7 +75,8 @@ import { HomeComponent } from './components/pages/account/home/home.component';
     SafePipe,
     NotfoundComponent,
     AccountComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
     //,AlertComponent
   ],
   imports: [
@@ -88,6 +92,9 @@ import { HomeComponent } from './components/pages/account/home/home.component';
     WowrealmstatusService,
     AppError,
     GuildMembersService,
+    Auth,
+    AUTH_PROVIDERS,
+    Auth0Guard
     // AlertService,
     // AuthenticationService,
     // AuthGuard,
