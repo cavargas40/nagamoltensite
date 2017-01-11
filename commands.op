@@ -22,7 +22,7 @@ ng github-pages:deploy --message "Optional commit message"
 git add .
 git commit -m "commmit message"
 git push
-git add origin http://github.com/mirepo.git
+git remote add origin http://github.com/mirepo.git
 git remote -v
 git pull origin master
 
