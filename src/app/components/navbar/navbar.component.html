@@ -13,9 +13,9 @@
         <li><a routerLink="/">Inicio</a></li>
         <li><a routerLink="/members">Integrantes</a></li>
         <!--<li><a routerLink="/login">Login</a></li>-->
-        <li><a href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
+        <li><a (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
         <li><a routerLink="/profile" *ngIf="auth.authenticated()">Profile</a></li>
-        <li><a href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</a></li>
+        <li><a (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</a></li>
         <!-- Dropdown Trigger -->
         <!--<li><a class="dropdown-button" href="#!" data-activates="dropdown1" *ngIf="auth.authenticated()">Cuenta<i class="material-icons right">arrow_drop_down</i></a></li>-->
 
@@ -27,9 +27,9 @@
         <li><a routerLink="/" onclick="$('.button-collapse').sideNav('hide');">Inicio</a></li>
         <li><a routerLink="/members" onclick="$('.button-collapse').sideNav('hide');">Integrantes</a></li>
         <!--<li><a routerLink="/login" onclick="$('.button-collapse').sideNav('hide');">Login</a></li>-->
-        <li><a href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
+        <li><a (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
         <li><a routerLink="/profile" onclick="$('.button-collapse').sideNav('hide');" *ngIf="auth.authenticated()">Profile</a></li>
-        <li><a href="#" (click)="auth.logout()" onclick="$('.button-collapse').sideNav('hide');" *ngIf="auth.authenticated()">Logout</a></li>
+        <li><a (click)="auth.logout()" onclick="$('.button-collapse').sideNav('hide');" *ngIf="auth.authenticated()">Logout</a></li>
         <li><a routerLink="/recruitment" onclick="$('.button-collapse').sideNav('hide');" *ngIf="!auth.authenticated()" >Juega con NagaMolten</a></li>        
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
