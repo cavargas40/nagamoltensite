@@ -8,8 +8,7 @@
   </div>
   <div class="parallax">
     <section id="slider">
-      <video autoplay="" poster="assets/slide2.jpg" id="bgvid"
-        loop="">
+      <video autoplay="" poster="assets/slide2.jpg" id="bgvid" loop="">
         <source src="assets/videos/header-illidan.webm" type="video/webm">
         <source src="assets/videos/header-illidan.mp4" type="video/mp4">
       </video>
@@ -33,13 +32,29 @@
       <div class="row">
         <div class="card">
           <div class="card-content">
-            <h4 class="bold">Guias de 2 Min! - Prueba del Valor (N/H)</h4>
-
-            <!-- WoWHeadLinksExample -->
-            <!--<a href="//www.wowhead.com/item=25697" class="q3" rel="gems=23121&amp;ench=2647&amp;pcs=25695:25696:25697">[Felstalker Bracers]</a>-->
-            
+            <h4 class="bold">Guias de 2 Min! - Fortaleza Nocturna (N/H)</h4>
             <div class="row">
+              <div class="col l4 m4 s4" *ngFor="let boss of nightholdbosses" (click)="openVideo(boss)">
+                <a href="#modal1">
+                  <div class="card center-align">
+                    <img class="responsive-img" src="assets/raids/nighthold/{{boss.boss_image}}.png">
+                    <p class="truncate">
+                      {{boss.boss_name}}
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <h4 class="bold">Guias de 2 Min! - Prueba del Valor (N/H)</h4>
+            <div class="row">
               <div class="col l4 m4 s4" *ngFor="let boss of trialofvalorbosses" (click)="openVideo(boss)">
                 <a href="#modal1">
                   <div class="card center-align">
@@ -50,9 +65,7 @@
                   </div>
                 </a>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
@@ -64,7 +77,7 @@
 
             <!-- WoWHeadLinksExample -->
             <!--<a href="//www.wowhead.com/item=25697" class="q3" rel="gems=23121&amp;ench=2647&amp;pcs=25695:25696:25697">[Felstalker Bracers]</a>-->
-            
+
             <div class="row">
 
               <div class="col l4 m4 s4" *ngFor="let boss of emeraldbosses" (click)="openVideo(boss)">
@@ -82,7 +95,7 @@
 
           </div>
         </div>
-      </div>      
+      </div>
 
       <div id="modal1" class="modal modal-close">
         <div class="modal-content">

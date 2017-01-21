@@ -24,7 +24,12 @@ git commit -m "commmit message"
 git push
 git remote add origin http://github.com/mirepo.git
 git remote -v
+git branch --set-upstream-to=origin/master master
 git pull origin master
+git pull
+git status
+git branch
+
 
 /*
   configuration vs debugger!  

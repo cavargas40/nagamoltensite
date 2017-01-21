@@ -18,6 +18,7 @@ export class Auth {
         }
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('profile', JSON.stringify(profile));
+        console.log(JSON.stringify(profile));
       });
     });
   }

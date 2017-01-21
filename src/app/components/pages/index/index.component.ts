@@ -8,7 +8,7 @@ declare var jQuery: any;
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
-  
+
 })
 export class IndexComponent implements OnInit {
 
@@ -23,6 +23,21 @@ export class IndexComponent implements OnInit {
   trialofvalorbosses: Raidguide[] = [{ boss_name: 'Odyn', boss_image: 'ui-ej-boss-odyn', url_video: 'ZS78mRperec' },
   { boss_name: 'Guarm', boss_image: 'ui-ej-boss-guarm', url_video: 'qnD_b4yTR2Q' },
   { boss_name: 'Helya', boss_image: 'ui-ej-boss-helya', url_video: 'zm3pcdk8H_A' }];
+
+  nightholdbosses: Raidguide[] = [{ boss_name: 'Skorpyron', boss_image: 'ui-ej-boss-skorpyron', url_video: 'ulTuV-jfcVo' },
+  { boss_name: 'Anomalía Cronomática', boss_image: 'ui-ej-boss-chronomatic-anomaly', url_video: 'wc2tcYv92RI' },
+  { boss_name: 'Trilliax', boss_image: 'ui-ej-boss-trilliax', url_video: 'QvsJGIHm8F4' },
+  { boss_name: 'Hoja de Hechizo Aluriel', boss_image: 'ui-ej-boss-spellblade-aluriel', url_video: 'qQ70WpnvYU8' },
+  { boss_name: 'Krosus', boss_image: 'ui-ej-boss-krosus', url_video: 'rxIAezy4XIE' },
+  { boss_name: 'Alto botanista Tel\'arn', boss_image: 'ui-ej-boss-botanist', url_video: 'BZPcrb1uDT4' },  
+  { boss_name: 'Tichondrius', boss_image: 'ui-ej-boss-tichondrius', url_video: '#' },
+  { boss_name: 'Adivino Etraeus', boss_image: 'ui-ej-boss-star-augur-etraeus', url_video: 'gDWuuL9hpIU' },
+  { boss_name: 'Gran Magistrix Elisande', boss_image: 'ui-ej-boss-grand-magistrix-elisande', url_video: '#' },
+  { boss_name: 'Gul\'dan', boss_image: 'ui-ej-boss-guldan', url_video: '#' },
+  ];
+
+
+  //https://www.youtube.com/watch?v=
 
   current_url: string = 'https://www.youtube.com/embed/n9dk_aOgWzE?rel=0';
 
