@@ -3,3 +3,9 @@ export class Raidguide {
     boss_image: string = '';
     boss_name: string = '';
 }
+
+export class Raids{
+    raid: Raidguide[];
+    name: string = ''; 
+    imgpath: string = '';   
+}
