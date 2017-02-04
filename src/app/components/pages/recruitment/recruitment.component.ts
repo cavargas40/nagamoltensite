@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-recruitment',
@@ -9,10 +9,10 @@ export class RecruitmentComponent implements OnInit {
 
   //@ViewChild('iframe') iframe:ElementRef;
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    
+
   }
 
   // onLoad() {

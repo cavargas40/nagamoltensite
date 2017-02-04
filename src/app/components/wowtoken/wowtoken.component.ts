@@ -15,6 +15,7 @@ export class WowtokenComponent implements OnInit {
 
   ngOnInit(): void {
     this.tokenService.getTokenPrice().then(token => this.token = token);
+    //console.log(this.token);
   }
   
 

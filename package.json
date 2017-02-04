@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "^2.1.0",
     "@angular/router": "^3.1.0",
     "@angular/upgrade": "^2.2.0",
+    "@types/lodash": "ts2.0",
+    "angular2-datatable": "^0.5.3",
     "angular2-fullcalendar": "^1.1.1",
     "angular2-jwt": "^0.1.27",
     "angular2-materialize": "^6.2.1",
@@ -28,8 +30,6 @@
     "core-js": "^2.4.1",
     "jquery": "^2.2.4",
     "materialize-css": "^0.97.8",
-    "ng2-image-lazy-load": "^2.0.9",
-    "ng2-pagination": "^1.0.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"

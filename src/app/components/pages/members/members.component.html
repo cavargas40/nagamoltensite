@@ -10,31 +10,103 @@
 </div>
 
 <div class="container">
-  <h2>
+  <h2 class="colorNagaMolten">
     Integrantes
   </h2>
   <p>
     Estos son los miembros de la guild NagaMolten!
   </p>
 
-  <table class="table-responsive highlight">
+  <div class="row">
+
+    <div class="col s12 m5">
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" class="validate" [(ngModel)]="filterQuery">
+          <label for="icon_prefix" class="active">Busca un integrante</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s6 m2">
+      <label class="label-control">Filas por página</label>
+      <select class="browser-default" [(ngModel)]="rowsOnPage">
+        <option [ngValue]="5">5</option>
+        <option [ngValue]="10">10</option>
+        <option [ngValue]="15">15</option>
+        <option [ngValue]="30">30</option>
+        <option [ngValue]="60">60</option>
+      </select>
+    </div>
+    <div class="col s6 m2">
+      <label class="label-control">Función</label>
+      <select class="browser-default" [(ngModel)]="SpecSelected">
+        <option [value]="-1">Todas</option>
+        <option [value]="1">Dps</option>
+        <option [value]="2">Tank</option>
+        <option [value]="3">Healing</option>
+      </select>
+    </div>
+
+    <div class="col s6 m3">
+      <label class="label-control">Ordenar por</label>
+      <select class="browser-default" [(ngModel)]="sortBy">
+          <option ngValue="character.name">Nombre</option>
+          <option ngValue="character.spec.name">Especialización</option>
+          <option ngValue="character.spec.role" class="hide-on-small-only">Función</option>          
+      </select>
+    </div>
+
+
+
+  </div>
+
+  <!--<div *ngIf="(guildmembers | | memberFilter : filterQuery | memFunctFilter : SpecSelected).length === 0">
+    "No matches"
+  </div>-->
+
+  <div *ngIf="guildmembers.length==0">
+    No values to display here
+  </div>
+  <table class="table-responsive highlight" [mfData]="guildmembers | memberFilter : filterQuery | memFunctFilter : SpecSelected"
+    #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder" *ngIf="guildmembers.length>0">
     <thead>
       <tr>
         <th data-field="img">Foto</th>
-        <th data-field="name">Nombre</th>
-        <th data-field="rol">Especialización</th>
-        <th data-field="race" class="hide-on-small-only">Función</th>
+        <th data-field="name">
+          <mfDefaultSorter by="character.name">
+            Nombre
+          </mfDefaultSorter>
+        </th>
+        <th data-field="rol">
+          <mfDefaultSorter by="character.spec.name">
+            Especialización
+          </mfDefaultSorter>
+        </th>
+        <th data-field="race" class="hide-on-small-only">
+          <mfDefaultSorter by="character.spec.role">
+            Función
+          </mfDefaultSorter>
+        </th>
       </tr>
     </thead>
-
-    <tbody>
-      <!--<tr *ngFor="let guildmember of guildmembers | paginate: { itemsPerPage:10, currentPage: p}" (click)="abretesesamo(guildmember)" class="cursorpointer">-->
-      <tr *ngFor="let guildmember of guildmembers" (click)="abretesesamo(guildmember)" class="cursorpointer">
-        <td>
-          <div *ngIf="guildmember.character.level > 20">
-            <img class="circle" src="http://render-us.worldofwarcraft.com/character/{{guildmember.character.thumbnail}}" alt="">
+    <tbody *ngIf="mf.data.length==0">
+      <tr>
+        <td colspan="4">
+          <div class="center">
+            No se encontraron registros con su criterio de busqueda.
           </div>
-          <div *ngIf="guildmember.character.level <= 20">
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="mf.data.length>0">
+      <tr *ngFor="let guildmember of mf.data" (click)="ViewCharacter(guildmember)" class="cursorpointer">
+        <td>
+          <div *ngIf="guildmember?.character?.level > 20">
+            <img class="circle" src="http://render-us.worldofwarcraft.com/character/{{guildmember?.character?.thumbnail}}" alt="">
+          </div>
+          <div *ngIf="guildmember?.character?.level <= 20">
             <img class="circle" src="http://us.battle.net/wow/static/images/2d/avatar/10-0.jpg" alt="">
           </div>
         </td>
@@ -46,10 +118,9 @@
         <td>
           <div *ngIf="guildmember?.character?.spec">
             <p>
-              <img class="circle" src="http://media.blizzard.com/wow/icons/36/{{guildmember.character?.spec?.icon}}.jpg" alt=""> {{guildmember.character?.spec?.name}}
+              <img class="circle" src="http://media.blizzard.com/wow/icons/36/{{guildmember.character?.spec?.icon}}.jpg" alt="">              {{guildmember.character?.spec?.name}}
             </p>
           </div>
-
           <div *ngIf="!guildmember?.character?.spec">
             -
           </div>
@@ -61,23 +132,15 @@
           <div *ngIf="!guildmember?.character?.spec">
             -
           </div>
-          <div>
-
-          </div>
         </td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15,30,60]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
   </table>
-  <div class="row">
-    <!-- CHANGED THE DIV BELOW (Changed size to col s10 offset-s1 
-    to match the divs above and added center-align -->
-    <div class="col s10 offset-s1 center-align" *ngIf="loadall">
-      <button class="btn waves-effect waves-light colorNagaMolten" name="action" (click)="loadMore()">
-            Cargar mas...            
-        </button>
-    </div>
-  </div>
-  <br>
-  <br>
-  <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
 </div>

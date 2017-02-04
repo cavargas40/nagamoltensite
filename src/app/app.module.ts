@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 //modules
 import { AppRoutingModule } from './util/app-routing.module';
-//import { Ng2PaginationModule } from 'ng2-pagination';
+import { DataTableModule } from "angular2-datatable";
 
 //app components
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,19 +22,14 @@ import { MembersComponent } from './components/pages/members/members.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 
 //services
-// import { WowtokenService } from './services/wowtoken.service';
-// import { WowrealmstatusService } from './services/wowrealmstatus.service';
-// import { GuildMembersService } from './services/guild-members.service';
-// import { AlertService } from './services/alert.service';
-// import { AuthenticationService } from './services/authentication.service';
-import {  /* UserService, */  WowtokenService, WowrealmstatusService, GuildMembersService /*, AlertService, AuthenticationService*/, Auth } from './services';
+import { WowtokenService, WowrealmstatusService, GuildMembersService, MaterializeService, Auth } from './services';
 
-//errorhandlers
-import { AppError } from './util/app-error';
+//utilities
+import { AppError, Utilities } from './util/';
 
 //pipes
-//import { FilterLvlMembersPipe } from './util/pipes/filter-lvl-members.pipe';
-import { SafePipe } from './util/pipes/safe.pipe'
+import { SafePipe } from './pipes/safe.pipe'
+import { MemberFilterPipe } from './pipes/member-filter.pipe';
 
 //external librarys
 import { MaterializeModule } from 'angular2-materialize';
@@ -46,11 +41,11 @@ import { NotfoundComponent } from './components/pages/notfound/notfound.componen
 import { AccountComponent } from './components/pages/account/account.component';
 import { HomeComponent } from './components/pages/account/home/home.component';
 import { ProfileComponent } from './components/pages/account/profile/profile.component';
-//import { AlertComponent } from './directives/';
 
 //guards
-//import { AuthGuard } from './guards/';
 import { Auth0Guard } from './guards/';
+import { MemFunctFilterPipe } from './pipes/mem-funct-filter.pipe';
+
 
 //fackebackend
 // import { fakeBackendProvider } from './util';
@@ -76,16 +71,17 @@ import { Auth0Guard } from './guards/';
     NotfoundComponent,
     AccountComponent,
     HomeComponent,
-    ProfileComponent
-    //,AlertComponent
+    ProfileComponent,
+    MemberFilterPipe,
+    MemFunctFilterPipe    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    //Ng2PaginationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTableModule
   ],
   providers: [
     WowtokenService,
@@ -94,13 +90,14 @@ import { Auth0Guard } from './guards/';
     GuildMembersService,
     Auth,
     AUTH_PROVIDERS,
-    Auth0Guard
+    Auth0Guard,
+    MaterializeService
     // AlertService,
     // AuthenticationService,
     // AuthGuard,
     // UserService
     //,    { provide: LocationStrategy, useClass: HashLocationStrategy }
-  ],  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

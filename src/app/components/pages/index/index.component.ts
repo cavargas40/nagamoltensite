@@ -30,10 +30,10 @@ export class IndexComponent implements OnInit {
   { boss_name: 'Hoja de Hechizo Aluriel', boss_image: 'ui-ej-boss-spellblade-aluriel', url_video: 'qQ70WpnvYU8' },
   { boss_name: 'Krosus', boss_image: 'ui-ej-boss-krosus', url_video: 'rxIAezy4XIE' },
   { boss_name: 'Alto botanista Tel\'arn', boss_image: 'ui-ej-boss-botanist', url_video: 'BZPcrb1uDT4' },
-  { boss_name: 'Tichondrius', boss_image: 'ui-ej-boss-tichondrius', url_video: '#' },
+  { boss_name: 'Tichondrius', boss_image: 'ui-ej-boss-tichondrius', url_video: 'mP7rr5Awads' },
   { boss_name: 'Adivino Etraeus', boss_image: 'ui-ej-boss-star-augur-etraeus', url_video: 'gDWuuL9hpIU' },
-  { boss_name: 'Gran Magistrix Elisande', boss_image: 'ui-ej-boss-grand-magistrix-elisande', url_video: '#' },
-  { boss_name: 'Gul\'dan', boss_image: 'ui-ej-boss-guldan', url_video: '#' },
+  { boss_name: 'Gran Magistrix Elisande', boss_image: 'ui-ej-boss-grand-magistrix-elisande', url_video: 'E-udWcRoI5k' },
+  { boss_name: 'Gul\'dan', boss_image: 'ui-ej-boss-guldan', url_video: 'qlkX6b7TJwU' },
   ];
 
   raids: Raids[] = [{ name: 'Fortaleza Nocturna', raid: this.nightholdbosses, imgpath: 'nighthold' },

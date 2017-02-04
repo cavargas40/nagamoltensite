@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
-import { GuildMembersService } from '../../../services/guild-members.service';
+import { GuildMembersService, MaterializeService } from '../../../services/';
 import { Member, Character, Spec } from '../../../model/member';
 
 declare var jQuery: any;
@@ -13,32 +13,25 @@ declare var jQuery: any;
 })
 export class MembersComponent implements OnInit {
 
-  guildmembers: Member[];
-  public loadall = true;
-
-  pager = {
-    limit: 10, //este es el numpero por defecto de integrantes a cargar
-    current: 0 //pagina actual
-  };
-
-  query = {
-    limit: this.pager.limit,
-    skip: this.pager.limit * this.pager.current
-  };
+  //public data = new Product(); // [{ available: false, best_seller: false, categories: [0, 0], description: '', id: 0, img: '', name: '', price: 0 }];;
+  public guildmembers: Member[] = [];
+  public filterQuery = "";
+  public rowsOnPage = 15;
+  public sortBy = "character.name";
+  public sortOrder = "asc";
+  public SpecSelected: number = -1;
   
+  //public loadall = true;
 
-  constructor(private el: ElementRef, private memberService: GuildMembersService, private locat: Location) { }
+  constructor(private el: ElementRef, private memberService: GuildMembersService, private locat: Location, private material:MaterializeService) { }
 
   ngOnInit() {    
-    try {
       jQuery(this.el.nativeElement).find('.parallax').parallax();
-      this.memberService.getGuildMembers().then(member => this.guildmembers = member.slice(0,10));  
-    } catch (error) {
-      console.log("Ups!: ", error)
-    }    
+      this.memberService.getGuildMembers().then(member => this.guildmembers = member);  
+      //this.memberService.getGuildMembers().then(member => this.guildmembers = member.slice(0,10));  
   }
 
-  abretesesamo(member: Member): void {
+  ViewCharacter(member: Member): void {
     let link = "";
     if (member.character.level > 20) {
       //link = "http://www.wow-heroes.com/character/us/Ragnaros/" + member.character.name + "/" //wow heroes
@@ -46,21 +39,18 @@ export class MembersComponent implements OnInit {
       window.open(link);
     }
     else {
-      window.alert("Debe ser minimo nivel 20");
+      this.material.toast('Para ver el personaje debes ser minimo lvl 20.', 4500, 'rounded')
+      //window.alert("Debe ser minimo nivel 20");
     }
   }
 
-  loadMore(){
-    //console.log("load more");
+  // loadMore(){
+  //   //console.log("load more");
     
-    this.memberService.getGuildMembers().then(member => this.guildmembers = member);
+  //   this.memberService.getGuildMembers().then(member => this.guildmembers = member);
 
-    this.loadall = false;
+  //   this.loadall = false;
 
 
-  }
-
-  getAll(){
-
-  }
+  // }
 }

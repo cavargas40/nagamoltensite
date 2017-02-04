@@ -6,8 +6,34 @@
  * Made By MaterializeCSS.com
  */
 
+ /* label focus color */
+
+
+.page-item .active{
+  background-color: #36D900 !important;
+}
+
+
+.pagination li {
+    background-color: #36D900 !important;
+}
+
+.pagination li.active {
+    background-color: #36D900 !important;
+}
+
+
+ .input-field input:focus + label {
+   color: #36D900 !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid #36D900 !important;
+   box-shadow: 0 1px 0 0 #36D900 !important
+ }
+
  
-.colorNagaMolten
+.btnNagaMolten
 {
     /*color: #36D900;*/
     background-color: #36D900 !important;

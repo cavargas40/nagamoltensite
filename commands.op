@@ -16,6 +16,11 @@ ng e2e
 ng github-pages:deploy --message "Optional commit message"
 
 
+/* lodash */
+npm install lodash --save
+npm install @types/lodash --save-dev
+,then adding the library to the angular-cli.json to list of global scripts (add "../node_modules/lodash/lodash.js" to the list apps[0].scripts).
+
 /*
     git
 */

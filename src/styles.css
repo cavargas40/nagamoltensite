@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/materialize-css/dist/css/materialize.css";
 
+
+.page-item .active{
+  background-color: #36D900 !important;
+}
+
+.pagination li.active {
+    background-color: #36D900 !important;
+}
+
 .colorNagaMolten
 {
     color: #36D900;
